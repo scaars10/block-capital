@@ -1,12 +1,11 @@
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 const Web3 = require('web3');
 const compiledFactory = require('./build/CampaignFactory.json');
+require('dotenv').config()
 
 const provider = new HDWalletProvider(
-  'salad spot wrist fade exhibit shaft mixture stuff parent mimic swear drum',
-  // remember to change this to your own phrase!
-  'https://rinkeby.infura.io/v3/5d44604047644751b258eb4f4e7e9ec3'
-  // remember to change this to your own endpoint!
+  process.env.SECRET_METAMASK,
+  process.env.CONTRACT_URL
 );
 const web3 = new Web3(provider);
 

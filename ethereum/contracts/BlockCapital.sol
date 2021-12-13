@@ -46,10 +46,12 @@ contract Campaign {
 
     function contribute() public payable {
         require(msg.value >= minimumContribution);
-
+        if(contributors[msg.sender]==0){
+            contributorCount++;
+        }
         totalContribution += msg.value;
         contributors[msg.sender] += msg.value;
-        contributorCount++;
+
     }
 
     function createRequest(string description, uint value, address recipient) public restricted {

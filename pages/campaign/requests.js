@@ -19,16 +19,16 @@ class Requests extends Component{
         const manager = await campaign.methods.manager().call();
         const totalContribution = await campaign.methods.totalContribution().call()
 
-        console.log(manager)
+        // console.log(manager)
         // console.log(`Address ${props.query.address}`)
         // console.log(`Request Count ${requestCount}`)
         const requests = []
         for(let index = 0; index< requestCount; index++){
            // await Promise.all(Array(requestCount).map( async (_, index)=>{
            //  console.log(`Request Count ${requestCount}`)
-            console.log(index)
+           //  console.log(index)
             const request = await campaign.methods.requests(index).call()
-            console.log(request)
+            // console.log(request)
             requests.push(request);
 
         }
